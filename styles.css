@@ -1,0 +1,11 @@
+/* found on stack exchange, I am not sure how else to 
+   remove the arrow from the pages input*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
