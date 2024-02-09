@@ -69,7 +69,6 @@ h2, h3, h4 {
 }
 
 .book {
-    border: 2px double red;
     height: 200px;
     width: 300px;
     display: grid;
