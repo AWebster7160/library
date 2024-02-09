@@ -40,11 +40,13 @@ function getInputs() {
 function makeBook() {
     let book = document.createElement('div');
     let bookInfo = document.createElement('div');
+    let bookMark = document.createElement('button');
     book.style.display = 'grid';
     let title = document.createElement('h3');
     let author = document.createElement('h4');
     let pages = document.createElement('span');
-    let deleteBtn = document.createElement('button');
+    let deleteBtn = document.createElement('img');
+    deleteBtn.src = ('./img/x.svg')
     // let readToggle = document.createElement('')
     book.setAttribute('class', 'book');
     bookInfo.setAttribute('class', 'book-info');
@@ -53,12 +55,14 @@ function makeBook() {
     author.setAttribute('class', 'author');
     pages.setAttribute('class', 'pages');
     deleteBtn.setAttribute('class', 'delete-book')
+    bookMark.setAttribute('id', 'book-mark');
     bookshelf.appendChild(book);
     book.appendChild(bookInfo);
     bookInfo.appendChild(title);
     bookInfo.appendChild(author);
     bookInfo.appendChild(pages);
     book.appendChild(deleteBtn);
+    book.appendChild(bookMark);
     title.innerText = myLibrary[myLibrary.length-1].title;
     author.innerText = myLibrary[myLibrary.length-1].author;
     pages.innerText = myLibrary[myLibrary.length-1].pages;
