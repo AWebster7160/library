@@ -1,6 +1,6 @@
 const myLibrary = [];
-const addBook = document.querySelector('dialog + button');
-const submitBook = document.querySelector('#submit');
+const addBook = document.querySelector('#new');
+const submitBook = document.querySelector('dialog button');
 const bookDialog = document.querySelector('dialog');
 const bookForm = document.querySelector('form');
 const bookshelf = document.querySelector('.bookshelf');
@@ -39,21 +39,25 @@ function getInputs() {
 
 function makeBook() {
     let book = document.createElement('div');
-    book.style.display = 'revert';
+    let bookInfo = document.createElement('div');
+    book.style.display = 'grid';
     let title = document.createElement('h3');
     let author = document.createElement('h4');
     let pages = document.createElement('span');
     let deleteBtn = document.createElement('button');
+    // let readToggle = document.createElement('')
     book.setAttribute('class', 'book');
-    book.setAttribute('id', `${myLibrary.length-1}`)
+    bookInfo.setAttribute('class', 'book-info');
+    book.setAttribute('id', `${myLibrary.length-1}`);
     title.setAttribute('class', 'title');
     author.setAttribute('class', 'author');
     pages.setAttribute('class', 'pages');
     deleteBtn.setAttribute('class', 'delete-book')
     bookshelf.appendChild(book);
-    book.appendChild(title);
-    book.appendChild(author);
-    book.appendChild(pages);
+    book.appendChild(bookInfo);
+    bookInfo.appendChild(title);
+    bookInfo.appendChild(author);
+    bookInfo.appendChild(pages);
     book.appendChild(deleteBtn);
     title.innerText = myLibrary[myLibrary.length-1].title;
     author.innerText = myLibrary[myLibrary.length-1].author;

@@ -10,31 +10,83 @@ input[type=number] {
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin: 0;
+    overflow: auto;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40%;
+    align-items: center;
+    background-color: #151E3F;
+    color: white;
+}
+
+.header button {
+    background-color: #729AA7;
+    height: 60px;
+    min-width: 140px;
+    border-radius: 12px;
+    border: none;
+}
+
+.header h1 {
+    font-size: 42px;
+    min-width: 200px;
 }
 
 h2, h3, h4 {
     margin: 0;
 }
 
-.bookshelf {
+.book-area {
+    height: 100%;
     width: 100%;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-color: #030027;
+}
+
+.bookshelf {
+    width: 96%;
+    height: 100vh;
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 150px);
-    grid-template-rows: 100px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 40px;
+    grid-auto-rows: 200px;
+
 }
 
 .book {
-    border: 1px solid red;
-    height: 100px;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
+    border: 2px double red;
+    height: 200px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    background-color: #F2F3D9;
+}
+
+.book-info {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.book .delete-book {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin-left: -150px;
+    margin-top: 180px;
+
 }
