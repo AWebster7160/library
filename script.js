@@ -40,7 +40,8 @@ function getInputs() {
 function makeBook() {
     let book = document.createElement('div');
     let bookInfo = document.createElement('div');
-    let bookMark = document.createElement('button');
+    let bookMark = document.createElement('img');
+    bookMark.src = ('./img/bookmark-red.svg')
     book.style.display = 'grid';
     let title = document.createElement('h3');
     let author = document.createElement('h4');
@@ -55,7 +56,7 @@ function makeBook() {
     author.setAttribute('class', 'author');
     pages.setAttribute('class', 'pages');
     deleteBtn.setAttribute('class', 'delete-book')
-    bookMark.setAttribute('id', 'book-mark');
+    bookMark.setAttribute('id', 'bookmark');
     bookshelf.appendChild(book);
     book.appendChild(bookInfo);
     bookInfo.appendChild(title);
@@ -66,12 +67,16 @@ function makeBook() {
     title.innerText = myLibrary[myLibrary.length-1].title;
     author.innerText = myLibrary[myLibrary.length-1].author;
     pages.innerText = myLibrary[myLibrary.length-1].pages;
+    pages.innerText += ' pages'
     deleteBtn.addEventListener('click', (event) => {
-    console.log(event.target.parentNode.id);
-    event.target.parentNode.style.display = 'none';
-    myLibrary.splice(`${(event.target.parentNode.id)}, 1`);
-    return myLibrary;
-})
+        console.log(event.target.parentNode.id);
+        event.target.parentNode.style.display = 'none';
+        myLibrary.splice(`${(event.target.parentNode.id)}, 1`);
+        return myLibrary;
+    })
+    bookMark.addEventListener('click', () => {
+        bookMark.classList.toggle('active');
+    })
 }
 
 submitBook.addEventListener('click', (event) => {
